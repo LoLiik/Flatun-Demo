@@ -17,9 +17,9 @@ fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0
 
 class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-
     @IBOutlet weak var collectionView: UICollectionView!
 
+    private let refreshControl = UIRefreshControl()
     var sourceId: Int? = 2 { didSet{ loadNews() } }
 
     var news: News?
@@ -27,13 +27,29 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        if #available(iOS 10.0, *){
+            collectionView.refreshControl = refreshControl
+        } else {
+            collectionView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
+        refreshControl.beginRefreshing()
         loadNews{
             self.collectionView.reloadData()
         }
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.tintColor = UIColor(hex: "5D6474")
+        
+    }
+
+    @objc private func refreshNews(_ sender: Any){
+        loadNews{
+            self.collectionView.reloadData()
+        }
     }
 
     func loadNews(from url: String = "", _ completion: @escaping () -> Void){
@@ -63,6 +79,7 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
                         self.news?.posts.append(contentsOf: parsedNews.posts)
                     }
                     completion()
+                    self.refreshControl.endRefreshing()
                 }
 
             } catch let jsonError {
@@ -138,109 +155,6 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
 }
 
-struct ImageInfo: Codable{
-    let image: URL
-    let heigtht: Int
-    let width: Int
-    let color: UIColor
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        image = try container.decode(URL.self, forKey: .image)
-        heigtht = try container.decode(Int.self, forKey: .height)
-        width = try container.decode(Int.self, forKey: .width)
-        let colorHexString = try container.decode(String.self, forKey: .color)
-        color = UIColor(hex: colorHexString)
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(image, forKey: .image)
-        try container.encode(heigtht, forKey: .height)
-        try container.encode(width, forKey: .width)
-        let hexColorCode = color.toHexString()
-        try container.encode(hexColorCode, forKey: .color)
-
-    }
-
-    private enum CodingKeys: String, CodingKey{
-        case image
-        case height
-        case width
-        case color
-    }
-}
-
-struct NewsPost: Codable{
-    let images: [ImageInfo]
-    let title: String
-    let published: Date
-    let providerAuthorName: String
-    let providerAuthorAvatar: URL?
-    let likesCount: Int
-
-        init(
-             images: [ImageInfo],
-             title: String,
-             published: Date,
-             providerAuthorName: String,
-             providerAuthorAvatar: URL?,
-             likesCount: Int
-            )
-        {
-            self.images = images
-            self.title = title
-            self.published = published
-            self.providerAuthorName = providerAuthorName
-            self.providerAuthorAvatar = providerAuthorAvatar
-            self.likesCount = likesCount
-        }
-
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            title = try container.decode(String.self, forKey: .title)
-            providerAuthorName = try container.decode(String.self, forKey: .providerAuthorName)
-            providerAuthorAvatar = try container.decode(URL?.self, forKey: .providerAuthorAvatar)
-            likesCount = try container.decode(Int.self, forKey: .likesCount)
-
-            let dateString = try container.decode(String.self, forKey: .published)
-            let formatter = DateFormatter.iso8601Full
-            if let date = formatter.date(from: dateString) {
-                published = date
-            } else {
-                print(dateString)
-                throw DecodingError.dataCorruptedError(forKey: .published,
-                                                       in: container,
-                                                       debugDescription: "Date string does not match format expected by formatter.")
-            }
-
-            images = try container.decode([ImageInfo].self, forKey: .images)
-        }
-
-        private enum CodingKeys: String, CodingKey{
-            case images 
-            case title
-            case published
-            case providerAuthorName = "provider_author_name"
-            case providerAuthorAvatar = "provider_author_avatar"
-            case likesCount = "likes_count"
-        }
-}
-
-struct News: Codable{
-    var nextLink: String?
-    var posts = [NewsPost]()
-
-    init(next: String?, posts: [NewsPost]){
-        self.nextLink = next
-        self.posts = posts
-    }
-
-    private enum CodingKeys: String, CodingKey{
-        case nextLink = "next"
-        case posts = "results"
-    }
-}
 
 extension DateFormatter {
     static let iso8601Full: DateFormatter = {
@@ -253,40 +167,4 @@ extension DateFormatter {
     }()
 }
 
-extension UIColor{
 
-    convenience init(hex: String){
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-
-//        if ((cString.count) != 6) {
-//            self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-//        }
-
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-
-        self.init(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
-
-    func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-
-        getRed(&r, green: &g, blue: &b, alpha: &a)
-
-        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-
-        return NSString(format:"#%06x", rgb) as String
-    }
-}

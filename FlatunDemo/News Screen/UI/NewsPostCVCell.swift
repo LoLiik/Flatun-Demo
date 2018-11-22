@@ -10,10 +10,11 @@ import UIKit
 
 class NewsPostCVCell: UICollectionViewCell {
     
-    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var mainImageView: PostImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var likesCountLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
 
     var newsPost: NewsPost?{ didSet{ updateUI() } }
 
@@ -24,19 +25,17 @@ class NewsPostCVCell: UICollectionViewCell {
         userNameLabel?.text = post.providerAuthorName.isEmpty ? "Инкогнито" : post.providerAuthorName
         titleLabel?.text = post.title
         likesCountLabel?.text = "\(post.likesCount)"
+        let formatter = flatunDateFormatter
+        DateLabel?.text = "\(formatter.string(from: post.published))"
 
-        if !post.images.isEmpty {
-            let postImageURL = post.images[0].image
-            URLSession.shared.dataTask(with: postImageURL) { (data, response, error) in
-                DispatchQueue.main.async {
-                    if let imageData = data {
-                        self.mainImageView?.image = UIImage(data: imageData)
-                    } else {
-                        self.mainImageView?.image = nil
-                    }
-                }
-                }.resume()
-        }
+        mainImageView.loadImageUsingUrlString(urlString: post.images[0].image.absoluteString)
+
     }
 }
 
+private let flatunDateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "d MMM yyyy HH:mm:ss"
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    return formatter
+}()

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		FD3BC5F921A3385C004C633C /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */; };
 		FD3BC5FB21A5EDF9004C633C /* NewsPostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */; };
+		FD3BC5FD21A7168E004C633C /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5FC21A7168E004C633C /* PostImageView.swift */; };
+		FD3BC5FF21A7189E004C633C /* NewsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5FE21A7189E004C633C /* NewsPost.swift */; };
+		FD3BC60121A718D0004C633C /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC60021A718D0004C633C /* ImageInfo.swift */; };
+		FD3BC60321A7193D004C633C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC60221A7193D004C633C /* News.swift */; };
+		FD3BC60D21A71A92004C633C /* NewsSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC60C21A71A92004C633C /* NewsSources.swift */; };
+		FD3BC60F21A71AC1004C633C /* UIColor Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC60E21A71AC1004C633C /* UIColor Extension.swift */; };
 		FDBE21F621A14CC90036A660 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE21F521A14CC90036A660 /* AppDelegate.swift */; };
 		FDBE21FB21A14CC90036A660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBE21F921A14CC90036A660 /* Main.storyboard */; };
 		FDBE21FD21A14CCB0036A660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDBE21FC21A14CCB0036A660 /* Assets.xcassets */; };
@@ -20,6 +26,12 @@
 /* Begin PBXFileReference section */
 		FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewController.swift; sourceTree = "<group>"; };
 		FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostCVCell.swift; sourceTree = "<group>"; };
+		FD3BC5FC21A7168E004C633C /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		FD3BC5FE21A7189E004C633C /* NewsPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPost.swift; sourceTree = "<group>"; };
+		FD3BC60021A718D0004C633C /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
+		FD3BC60221A7193D004C633C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		FD3BC60C21A71A92004C633C /* NewsSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSources.swift; sourceTree = "<group>"; };
+		FD3BC60E21A71AC1004C633C /* UIColor Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extension.swift"; sourceTree = "<group>"; };
 		FDBE21F221A14CC90036A660 /* FlatunDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatunDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBE21F521A14CC90036A660 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDBE21FA21A14CC90036A660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +53,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD3BC60421A71983004C633C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD3BC60021A718D0004C633C /* ImageInfo.swift */,
+				FD3BC5FE21A7189E004C633C /* NewsPost.swift */,
+				FD3BC60221A7193D004C633C /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD3BC60521A719B4004C633C /* News Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FD3BC60621A719DA004C633C /* UI */,
+				FD3BC60421A71983004C633C /* Model */,
+			);
+			path = "News Screen";
+			sourceTree = "<group>";
+		};
+		FD3BC60621A719DA004C633C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */,
+				FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */,
+				FD3BC5FC21A7168E004C633C /* PostImageView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FD3BC60721A719F6004C633C /* Sources Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FD3BC60821A71A20004C633C /* UI */,
+				FD3BC60921A71A2E004C633C /* Model */,
+			);
+			path = "Sources Screen";
+			sourceTree = "<group>";
+		};
+		FD3BC60821A71A20004C633C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE220721A14D430036A660 /* SourcesTableTableViewController.swift */,
+				FDBE220F21A1568B0036A660 /* NewsSourceTVCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FD3BC60921A71A2E004C633C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD3BC60C21A71A92004C633C /* NewsSources.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD3BC60A21A71A58004C633C /* Additional Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE220121A14CCB0036A660 /* Info.plist */,
+				FDBE21FC21A14CCB0036A660 /* Assets.xcassets */,
+				FDBE21FE21A14CCB0036A660 /* LaunchScreen.storyboard */,
+				FD3BC60E21A71AC1004C633C /* UIColor Extension.swift */,
+			);
+			path = "Additional Files";
+			sourceTree = "<group>";
+		};
+		FD3BC60B21A71A68004C633C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE21F521A14CC90036A660 /* AppDelegate.swift */,
+				FDBE21F921A14CC90036A660 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		FDBE21E921A14CC90036A660 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +147,10 @@
 		FDBE21F421A14CC90036A660 /* FlatunDemo */ = {
 			isa = PBXGroup;
 			children = (
-				FDBE220721A14D430036A660 /* SourcesTableTableViewController.swift */,
-				FDBE220F21A1568B0036A660 /* NewsSourceTVCell.swift */,
-				FDBE21F521A14CC90036A660 /* AppDelegate.swift */,
-				FDBE21F921A14CC90036A660 /* Main.storyboard */,
-				FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */,
-				FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */,
-				FDBE21FC21A14CCB0036A660 /* Assets.xcassets */,
-				FDBE21FE21A14CCB0036A660 /* LaunchScreen.storyboard */,
-				FDBE220121A14CCB0036A660 /* Info.plist */,
+				FD3BC60B21A71A68004C633C /* Main */,
+				FD3BC60721A719F6004C633C /* Sources Screen */,
+				FD3BC60521A719B4004C633C /* News Screen */,
+				FD3BC60A21A71A58004C633C /* Additional Files */,
 			);
 			path = FlatunDemo;
 			sourceTree = "<group>";
@@ -145,9 +227,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDBE221021A1568B0036A660 /* NewsSourceTVCell.swift in Sources */,
+				FD3BC60D21A71A92004C633C /* NewsSources.swift in Sources */,
 				FD3BC5F921A3385C004C633C /* NewsCollectionViewController.swift in Sources */,
+				FD3BC60F21A71AC1004C633C /* UIColor Extension.swift in Sources */,
+				FD3BC60121A718D0004C633C /* ImageInfo.swift in Sources */,
 				FD3BC5FB21A5EDF9004C633C /* NewsPostCVCell.swift in Sources */,
 				FDBE220821A14D430036A660 /* SourcesTableTableViewController.swift in Sources */,
+				FD3BC60321A7193D004C633C /* News.swift in Sources */,
+				FD3BC5FD21A7168E004C633C /* PostImageView.swift in Sources */,
+				FD3BC5FF21A7189E004C633C /* NewsPost.swift in Sources */,
 				FDBE21F621A14CC90036A660 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82L9KUH2QT;
-				INFOPLIST_FILE = FlatunDemo/Info.plist;
+				INFOPLIST_FILE = "FlatunDemo/Additional Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82L9KUH2QT;
-				INFOPLIST_FILE = FlatunDemo/Info.plist;
+				INFOPLIST_FILE = "FlatunDemo/Additional Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
