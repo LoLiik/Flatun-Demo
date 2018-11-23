@@ -34,6 +34,16 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
+                let alert = UIAlertController(title: "Отсутствуте интернет соединение", message: "Проверьте сигнал сотовой сети или достуность WiFi и обновите данные (потяните по экрану вниз)", preferredStyle: .alert)
+                alert.addAction(
+                    UIAlertAction(title: "Вернуться к новостям", style: .destructive)
+                )
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                    self.loadSources {
+                        self.tableView.reloadData()
+                    }
+                }
             }
 
             guard let data = data else { return }

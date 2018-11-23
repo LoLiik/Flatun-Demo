@@ -18,7 +18,7 @@ class ContainerViewController: UIViewController {
         if sideMenuOpen{
             sideLeadingConstrait.constant = 0
         } else {
-            sideLeadingConstrait.constant = -265
+            sideLeadingConstrait.constant = -263
         }
         sideMenuOpen.toggle()
     }
