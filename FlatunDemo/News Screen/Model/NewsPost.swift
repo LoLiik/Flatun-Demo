@@ -46,6 +46,7 @@ struct NewsPost: Codable{
             published = date
         } else {
             print(dateString)
+            published = Date()
             throw DecodingError.dataCorruptedError(forKey: .published,
                                                    in: container,
                                                    debugDescription: "Date string does not match format expected by formatter.")

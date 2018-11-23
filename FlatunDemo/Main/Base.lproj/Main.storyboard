@@ -119,13 +119,13 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-jv-ghc" userLabel="Post Panel">
                                                             <rect key="frame" x="0.0" y="250" width="355" height="74"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3N-ou-z6D" userLabel="Post Title Label">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3N-ou-z6D" userLabel="Post Title Label">
                                                                     <rect key="frame" x="15" y="15" width="317" height="23"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1U-W7-t5k">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1U-W7-t5k">
                                                                     <rect key="frame" x="15" y="53" width="207" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -139,6 +139,7 @@
                                                                 <constraint firstItem="i3N-ou-z6D" firstAttribute="leading" secondItem="fRu-jv-ghc" secondAttribute="leading" constant="15" id="BzP-AC-5x0"/>
                                                                 <constraint firstAttribute="trailing" secondItem="i3N-ou-z6D" secondAttribute="trailing" constant="23" id="Dc6-nL-GwO"/>
                                                                 <constraint firstAttribute="trailing" secondItem="t1U-W7-t5k" secondAttribute="trailing" constant="133" id="MDL-mK-9Dv"/>
+                                                                <constraint firstAttribute="bottom" secondItem="t1U-W7-t5k" secondAttribute="bottom" constant="10" id="O8R-9W-VxI"/>
                                                                 <constraint firstItem="i3N-ou-z6D" firstAttribute="top" secondItem="fRu-jv-ghc" secondAttribute="top" constant="15" id="Y1r-EJ-b5f"/>
                                                                 <constraint firstItem="t1U-W7-t5k" firstAttribute="top" secondItem="i3N-ou-z6D" secondAttribute="bottom" constant="15" id="fqk-qr-PnL"/>
                                                             </constraints>
