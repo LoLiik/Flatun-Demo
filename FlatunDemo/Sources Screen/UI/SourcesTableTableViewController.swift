@@ -72,21 +72,14 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
 
-     // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Show News"{
-            if let destinationVC = segue.destination as? UINavigationController{
-                if let collectionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsCollectionViewController") as? UIViewController{
-                    if let newCollectionVC = collectionVC as? NewsCollectionViewController{
-                    newCollectionVC.sourceId = sources?[tableView.indexPathForSelectedRow?.row ?? 0].id
-                    newCollectionVC.title = sources?[tableView.indexPathForSelectedRow?.row ?? 0].name
-                    }
-                destinationVC.show(collectionVC, sender: false)
-                }
-            }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let id = sources?[indexPath.row].id {
+            NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("ShowCollection"), object: nil, userInfo: ["SourceId":id, "SourceTitle": sources?[indexPath.row].name])
         }
+
     }
+
 
 }
 

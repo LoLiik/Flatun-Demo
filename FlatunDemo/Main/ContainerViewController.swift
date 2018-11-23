@@ -10,9 +10,9 @@ import UIKit
 
 class ContainerViewController: UIViewController {
 
+    @IBOutlet weak var mainVC: UIView!
     @IBOutlet weak var sideLeadingConstrait: NSLayoutConstraint!
     var sideMenuOpen = true
-
 
     @objc func toggleSideMenu(){
         if sideMenuOpen{
@@ -22,10 +22,15 @@ class ContainerViewController: UIViewController {
         }
         sideMenuOpen.toggle()
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: NSNotification.Name(rawValue: "ToggleSideMenu"), object: nil)
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("Disapear")
+    }
+
 }

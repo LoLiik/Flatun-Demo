@@ -10,16 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Nav View Controller-->
         <scene sceneID="bTb-HG-3DX">
             <objects>
-                <navigationController id="JEo-Xc-J3P" sceneMemberID="viewController">
+                <navigationController id="JEo-Xc-J3P" customClass="NavViewController" customModule="FlatunDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Ss-sI-rhK">
-                        <rect key="frame" x="0.0" y="20" width="262.5" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="PM1-kH-2m6" kind="relationship" relationship="rootViewController" id="wDx-1q-6ao"/>
+                        <segue destination="PM1-kH-2m6" kind="show" identifier="ShowNewCollection" id="gEE-dD-fTZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvK-Pf-yrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -31,21 +32,21 @@
             <objects>
                 <viewController storyboardIdentifier="NewsCollectionViewController" id="PM1-kH-2m6" customClass="NewsCollectionViewController" customModule="FlatunDemo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xB8-hK-0wa">
-                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TableBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y3n-AD-YFf" userLabel="Table Background Image">
-                                <rect key="frame" x="0.0" y="0.0" width="262.5" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="8lV-yh-bpv" userLabel="Logo Image View">
-                                <rect key="frame" x="81.5" y="79" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="35" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="1AH-R9-EGr"/>
                                     <constraint firstAttribute="height" constant="100" id="2xy-Y9-ZkJ"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mbj-9Q-w28">
-                                <rect key="frame" x="0.0" y="20" width="262.5" height="499"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4lq-AN-tUc">
                                     <size key="itemSize" width="355" height="374"/>
@@ -55,7 +56,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsPostCell" id="gp0-T1-L4k" customClass="NewsPostCVCell" customModule="FlatunDemo" customModuleProvider="target">
-                                        <rect key="frame" x="-46.5" y="0.0" width="355" height="374"/>
+                                        <rect key="frame" x="10" y="0.0" width="355" height="374"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="374"/>
@@ -65,7 +66,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="374"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPostImage" translatesAutoresizingMaskIntoConstraints="NO" id="2mV-Wk-qxO" customClass="PostImageView" customModule="FlatunDemo" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-26" width="355" height="250"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="250"/>
                                                             <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehj-EG-REt" userLabel="Info Panel">
@@ -116,7 +117,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-jv-ghc" userLabel="Post Panel">
-                                                            <rect key="frame" x="0.0" y="224" width="355" height="100"/>
+                                                            <rect key="frame" x="0.0" y="250" width="355" height="74"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3N-ou-z6D" userLabel="Post Title Label">
                                                                     <rect key="frame" x="15" y="15" width="317" height="23"/>
@@ -150,7 +151,7 @@
                                                         <constraint firstItem="fRu-jv-ghc" firstAttribute="leading" secondItem="caw-pg-82I" secondAttribute="leading" id="4dA-sk-9Nb"/>
                                                         <constraint firstAttribute="trailing" secondItem="fRu-jv-ghc" secondAttribute="trailing" id="9Nz-Uj-fhu"/>
                                                         <constraint firstItem="2mV-Wk-qxO" firstAttribute="height" secondItem="ehj-EG-REt" secondAttribute="height" multiplier="5" id="VBO-IQ-91V"/>
-                                                        <constraint firstItem="2mV-Wk-qxO" firstAttribute="top" secondItem="caw-pg-82I" secondAttribute="top" constant="-26" id="fjv-70-MoZ"/>
+                                                        <constraint firstItem="2mV-Wk-qxO" firstAttribute="top" secondItem="caw-pg-82I" secondAttribute="top" id="fjv-70-MoZ"/>
                                                         <constraint firstItem="2mV-Wk-qxO" firstAttribute="leading" secondItem="caw-pg-82I" secondAttribute="leading" id="gpd-Df-077"/>
                                                         <constraint firstAttribute="trailing" secondItem="ehj-EG-REt" secondAttribute="trailing" id="lJE-HV-7Y5"/>
                                                         <constraint firstItem="fRu-jv-ghc" firstAttribute="top" secondItem="2mV-Wk-qxO" secondAttribute="bottom" id="oSR-LS-KKV"/>
@@ -220,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnb-T2-gGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="-192"/>
+            <point key="canvasLocation" x="494" y="-192"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JVp-gY-Z6z">
@@ -334,7 +335,6 @@
                                         <connections>
                                             <outlet property="logo" destination="YAy-wM-KLR" id="Tk9-8v-IL5"/>
                                             <outlet property="name" destination="sJH-XP-nFQ" id="a1r-II-SpZ"/>
-                                            <segue destination="JEo-Xc-J3P" kind="showDetail" identifier="Show News" id="sVZ-cz-WU8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -395,6 +395,7 @@
                             <constraint firstItem="CfI-Mh-Jmq" firstAttribute="top" secondItem="dhp-wQ-iaA" secondAttribute="top" id="o0b-Qp-GoC"/>
                             <constraint firstAttribute="bottom" secondItem="LNG-Qt-xR3" secondAttribute="bottom" id="oDm-bo-WSY"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="VxP-TL-LRr"/>
                     </view>
                     <connections>
                         <outlet property="sideLeadingConstrait" destination="XPk-W7-geV" id="hmt-aC-X69"/>
@@ -415,6 +416,6 @@
         <image name="sideMenuImage" width="21" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sVZ-cz-WU8"/>
+        <segue reference="gEE-dD-fTZ"/>
     </inferredMetricsTieBreakers>
 </document>

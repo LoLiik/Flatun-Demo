@@ -22,6 +22,7 @@
 		FDBE220021A14CCB0036A660 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBE21FE21A14CCB0036A660 /* LaunchScreen.storyboard */; };
 		FDBE220821A14D430036A660 /* SourcesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE220721A14D430036A660 /* SourcesTableTableViewController.swift */; };
 		FDBE221021A1568B0036A660 /* NewsSourceTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE220F21A1568B0036A660 /* NewsSourceTVCell.swift */; };
+		FDEFFCE921A7FD290039EA26 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFFCE821A7FD290039EA26 /* NavViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FDBE220121A14CCB0036A660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDBE220721A14D430036A660 /* SourcesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesTableTableViewController.swift; sourceTree = "<group>"; };
 		FDBE220F21A1568B0036A660 /* NewsSourceTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSourceTVCell.swift; sourceTree = "<group>"; };
+		FDEFFCE821A7FD290039EA26 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		FD3BC60B21A71A68004C633C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FDEFFCE821A7FD290039EA26 /* NavViewController.swift */,
 				FD3BC61421A7CD2D004C633C /* ContainerViewController.swift */,
 				FDBE21F521A14CC90036A660 /* AppDelegate.swift */,
 				FDBE21F921A14CC90036A660 /* Main.storyboard */,
@@ -236,6 +239,7 @@
 				FD3BC60121A718D0004C633C /* ImageInfo.swift in Sources */,
 				FD3BC5FB21A5EDF9004C633C /* NewsPostCVCell.swift in Sources */,
 				FDBE220821A14D430036A660 /* SourcesTableTableViewController.swift in Sources */,
+				FDEFFCE921A7FD290039EA26 /* NavViewController.swift in Sources */,
 				FD3BC60321A7193D004C633C /* News.swift in Sources */,
 				FD3BC5FD21A7168E004C633C /* PostImageView.swift in Sources */,
 				FD3BC5FF21A7189E004C633C /* NewsPost.swift in Sources */,

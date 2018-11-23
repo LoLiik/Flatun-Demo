@@ -18,7 +18,6 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBAction func showSide(_ sender: UIBarButtonItem) {
-        print("Show side button clicked")
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
 
     }
