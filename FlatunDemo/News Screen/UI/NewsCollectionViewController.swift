@@ -13,8 +13,6 @@ fileprivate let baseRequestURL = "http://api.flatun.com/api/feed_item/"
 fileprivate let itemsPerRow: CGFloat = 1
 fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
 
-
-
 class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,9 +29,10 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
     var news: News?
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
+        if sourceId == nil{
+            self.title = "All"
+        }
         if #available(iOS 10.0, *){
             collectionView.refreshControl = refreshControl
         } else {
@@ -48,6 +47,7 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        _ =  self.view
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.tintColor = UIColor(hex: "5D6474")
         
@@ -116,8 +116,6 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! NewsPostCVCell
-//        print("\(cell as! NewsPostCVCell)")
-//        cell.backgroundColor = .black
         cell.newsPost = news?.posts[indexPath.row]
 
         if indexPath.row == (news?.posts.count ?? 0) - 1 {

@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="JEo-Xc-J3P" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Ss-sI-rhK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="262.5" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,7 +29,7 @@
         <!--News Collection View Controller-->
         <scene sceneID="8S5-CO-Vio">
             <objects>
-                <viewController id="PM1-kH-2m6" customClass="NewsCollectionViewController" customModule="FlatunDemo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsCollectionViewController" id="PM1-kH-2m6" customClass="NewsCollectionViewController" customModule="FlatunDemo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xB8-hK-0wa">
                         <rect key="frame" x="0.0" y="0.0" width="262.5" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="262.5" height="519"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="8lV-yh-bpv" userLabel="Logo Image View">
-                                <rect key="frame" x="81.5" y="35" width="100" height="100"/>
+                                <rect key="frame" x="81.5" y="79" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="1AH-R9-EGr"/>
                                     <constraint firstAttribute="height" constant="100" id="2xy-Y9-ZkJ"/>
@@ -220,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnb-T2-gGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="-170"/>
+            <point key="canvasLocation" x="106" y="-192"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JVp-gY-Z6z">
@@ -334,7 +334,7 @@
                                         <connections>
                                             <outlet property="logo" destination="YAy-wM-KLR" id="Tk9-8v-IL5"/>
                                             <outlet property="name" destination="sJH-XP-nFQ" id="a1r-II-SpZ"/>
-                                            <segue destination="PM1-kH-2m6" kind="showDetail" identifier="Show News" id="qWy-0g-dp4"/>
+                                            <segue destination="JEo-Xc-J3P" kind="showDetail" identifier="Show News" id="sVZ-cz-WU8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -415,6 +415,6 @@
         <image name="sideMenuImage" width="21" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qWy-0g-dp4"/>
+        <segue reference="sVZ-cz-WU8"/>
     </inferredMetricsTieBreakers>
 </document>

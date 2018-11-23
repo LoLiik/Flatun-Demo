@@ -25,7 +25,6 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
     }
 
     func loadSources(_ completion: @escaping () -> Void){
@@ -77,9 +76,15 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show News"{
-            let destinationVC = segue.destination as! NewsCollectionViewController
-            destinationVC.sourceId = sources?[tableView.indexPathForSelectedRow?.row ?? 0].id
-            destinationVC.title = sources?[tableView.indexPathForSelectedRow?.row ?? 0].name
+            if let destinationVC = segue.destination as? UINavigationController{
+                if let collectionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsCollectionViewController") as? UIViewController{
+                    if let newCollectionVC = collectionVC as? NewsCollectionViewController{
+                    newCollectionVC.sourceId = sources?[tableView.indexPathForSelectedRow?.row ?? 0].id
+                    newCollectionVC.title = sources?[tableView.indexPathForSelectedRow?.row ?? 0].name
+                    }
+                destinationVC.show(collectionVC, sender: false)
+                }
+            }
         }
     }
 
