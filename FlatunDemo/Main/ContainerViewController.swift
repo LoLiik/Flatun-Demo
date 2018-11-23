@@ -20,6 +20,7 @@ class ContainerViewController: UIViewController {
         } else {
             sideLeadingConstrait.constant = -250
         }
+        sideMenuOpen.toggle()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
