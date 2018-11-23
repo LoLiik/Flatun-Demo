@@ -20,8 +20,6 @@ class PostImageView: UIImageView {
 
         let url = NSURL(string: urlString)
 
-        image = nil
-
         if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             self.image = imageFromCache
             return
