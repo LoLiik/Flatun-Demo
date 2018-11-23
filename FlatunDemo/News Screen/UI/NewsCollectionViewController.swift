@@ -19,12 +19,19 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    @IBAction func showSide(_ sender: UIBarButtonItem) {
+        print("Show side button clicked")
+        NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+
+    }
+
     private let refreshControl = UIRefreshControl()
-    var sourceId: Int? = 2 { didSet{ loadNews() } }
+    var sourceId: Int? { didSet{ loadNews() } }
 
     var news: News?
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         if #available(iOS 10.0, *){
@@ -53,8 +60,12 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
     }
 
     func loadNews(from url: String = "", _ completion: @escaping () -> Void){
-        guard let id = sourceId else { return }
-        let urlString = url.isEmpty ? "\(baseRequestURL)?provider=\(id)" : url
+        var urlString = ""
+        if let id = sourceId {
+            urlString = url.isEmpty ? "\(baseRequestURL)?provider=\(id)" : url
+        } else {
+            urlString = baseRequestURL
+        }
         guard let url = URL(string: urlString) else { return }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -87,16 +98,6 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
             }
             }.resume()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 

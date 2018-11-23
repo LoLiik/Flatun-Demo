@@ -28,8 +28,9 @@ class NewsPostCVCell: UICollectionViewCell {
         let formatter = flatunDateFormatter
         DateLabel?.text = "\(formatter.string(from: post.published))"
 
+        if !post.images.isEmpty{
         mainImageView.loadImageUsingUrlString(urlString: post.images[0].image.absoluteString)
-
+        }
     }
 }
 

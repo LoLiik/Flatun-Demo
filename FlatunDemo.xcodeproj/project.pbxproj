@@ -15,6 +15,7 @@
 		FD3BC60321A7193D004C633C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC60221A7193D004C633C /* News.swift */; };
 		FD3BC60D21A71A92004C633C /* NewsSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC60C21A71A92004C633C /* NewsSources.swift */; };
 		FD3BC60F21A71AC1004C633C /* UIColor Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC60E21A71AC1004C633C /* UIColor Extension.swift */; };
+		FD3BC61521A7CD2D004C633C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC61421A7CD2D004C633C /* ContainerViewController.swift */; };
 		FDBE21F621A14CC90036A660 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE21F521A14CC90036A660 /* AppDelegate.swift */; };
 		FDBE21FB21A14CC90036A660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBE21F921A14CC90036A660 /* Main.storyboard */; };
 		FDBE21FD21A14CCB0036A660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDBE21FC21A14CCB0036A660 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		FD3BC60221A7193D004C633C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		FD3BC60C21A71A92004C633C /* NewsSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSources.swift; sourceTree = "<group>"; };
 		FD3BC60E21A71AC1004C633C /* UIColor Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extension.swift"; sourceTree = "<group>"; };
+		FD3BC61421A7CD2D004C633C /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		FDBE21F221A14CC90036A660 /* FlatunDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatunDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBE21F521A14CC90036A660 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDBE21FA21A14CC90036A660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		FD3BC60B21A71A68004C633C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FD3BC61421A7CD2D004C633C /* ContainerViewController.swift */,
 				FDBE21F521A14CC90036A660 /* AppDelegate.swift */,
 				FDBE21F921A14CC90036A660 /* Main.storyboard */,
 			);
@@ -236,6 +239,7 @@
 				FD3BC60321A7193D004C633C /* News.swift in Sources */,
 				FD3BC5FD21A7168E004C633C /* PostImageView.swift in Sources */,
 				FD3BC5FF21A7189E004C633C /* NewsPost.swift in Sources */,
+				FD3BC61521A7CD2D004C633C /* ContainerViewController.swift in Sources */,
 				FDBE21F621A14CC90036A660 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
