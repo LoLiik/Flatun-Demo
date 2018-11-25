@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvK-Pf-yrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-513" y="-192"/>
+            <point key="canvasLocation" x="-493" y="-79"/>
         </scene>
         <!--News Collection View Controller-->
         <scene sceneID="8S5-CO-Vio">
@@ -221,31 +221,32 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="mbj-9Q-w28" id="71d-lc-JvM"/>
+                        <outlet property="sideMenuButton" destination="gt7-Ux-jnr" id="Vbn-NN-w7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnb-T2-gGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="494" y="-192"/>
+            <point key="canvasLocation" x="238" y="303"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JVp-gY-Z6z">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="9FX-fm-yy1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y2F-K8-Pkd">
-                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="262" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TableBackground" translatesAutoresizingMaskIntoConstraints="NO" id="RH5-bm-hvE" userLabel="Table Background Image">
-                                <rect key="frame" x="0.0" y="0.0" width="262.5" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="262" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKd-Oh-5wQ" userLabel="Table Header View">
-                                <rect key="frame" x="0.0" y="20" width="262.5" height="128"/>
+                                <rect key="frame" x="0.0" y="20" width="262" height="128"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sWC-Zy-8bd" userLabel="Logo Image View">
-                                        <rect key="frame" x="26.5" y="44" width="210" height="40"/>
+                                        <rect key="frame" x="26" y="44" width="210" height="40"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Separator" translatesAutoresizingMaskIntoConstraints="NO" id="ZVN-UJ-GDB" userLabel="Separator Image View">
-                                        <rect key="frame" x="35.5" y="126" width="192" height="2"/>
+                                        <rect key="frame" x="35" y="126" width="192" height="2"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -258,7 +259,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edx-aS-QGf">
-                                <rect key="frame" x="0.0" y="148" width="262.5" height="519"/>
+                                <rect key="frame" x="0.0" y="148" width="262" height="519"/>
                                 <connections>
                                     <segue destination="n7Q-hr-biU" kind="embed" id="zsV-vU-3Qk"/>
                                 </connections>
@@ -287,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="StU-Y2-ixl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1342" y="-192"/>
+            <point key="canvasLocation" x="-1343" y="-79"/>
         </scene>
         <!--Sources Table View Controller-->
         <scene sceneID="v5x-jn-SBh">
@@ -364,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0A-Te-hI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1343" y="587"/>
+            <point key="canvasLocation" x="-1343" y="1090"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="RFb-Ko-83P">
@@ -375,13 +376,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfI-Mh-Jmq" userLabel="Side Container View">
-                                <rect key="frame" x="-260" y="0.0" width="262.5" height="667"/>
+                                <rect key="frame" x="-262" y="0.0" width="262" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="al4-6C-YMu"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="al4-6C-YMu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="al4-6C-YMu"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="9FX-fm-yy1" kind="embed" id="Md7-4e-eTb"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNG-Qt-xR3" userLabel="Main Container View">
-                                <rect key="frame" x="2.5" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="JEo-Xc-J3P" kind="embed" id="w2t-Z3-Ixe"/>
                                 </connections>
@@ -389,25 +403,55 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LNG-Qt-xR3" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" id="59h-jn-idC"/>
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="top" secondItem="dhp-wQ-iaA" secondAttribute="top" id="7Sw-LQ-O9W"/>
-                            <constraint firstItem="LNG-Qt-xR3" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" id="F5C-4Z-dtY"/>
-                            <constraint firstItem="CfI-Mh-Jmq" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" multiplier="0.7" id="IKm-hc-DEU"/>
-                            <constraint firstItem="LNG-Qt-xR3" firstAttribute="leading" secondItem="CfI-Mh-Jmq" secondAttribute="trailing" id="La2-kg-sme"/>
-                            <constraint firstItem="CfI-Mh-Jmq" firstAttribute="leading" secondItem="dhp-wQ-iaA" secondAttribute="leading" constant="-260" id="XPk-W7-geV"/>
+                            <constraint firstItem="CfI-Mh-Jmq" firstAttribute="height" secondItem="dhp-wQ-iaA" secondAttribute="height" id="9Df-Cm-ztK"/>
+                            <constraint firstItem="VxP-TL-LRr" firstAttribute="trailing" secondItem="LNG-Qt-xR3" secondAttribute="trailing" id="OqP-Ft-LB1"/>
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="height" secondItem="dhp-wQ-iaA" secondAttribute="height" id="beC-kS-5jd"/>
+                            <constraint firstItem="LNG-Qt-xR3" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" multiplier="0.67" id="c54-m3-kTa"/>
+                            <constraint firstItem="VxP-TL-LRr" firstAttribute="leading" secondItem="CfI-Mh-Jmq" secondAttribute="leading" id="cXf-zz-jdk"/>
+                            <constraint firstItem="CfI-Mh-Jmq" firstAttribute="leading" secondItem="VxP-TL-LRr" secondAttribute="leading" constant="-262" id="cgN-zA-vfj"/>
+                            <constraint firstItem="CfI-Mh-Jmq" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" multiplier="0.33" id="eGf-m5-mgq"/>
                             <constraint firstAttribute="bottom" secondItem="CfI-Mh-Jmq" secondAttribute="bottom" id="mFh-Zh-xbD"/>
                             <constraint firstItem="CfI-Mh-Jmq" firstAttribute="top" secondItem="dhp-wQ-iaA" secondAttribute="top" id="o0b-Qp-GoC"/>
                             <constraint firstAttribute="bottom" secondItem="LNG-Qt-xR3" secondAttribute="bottom" id="oDm-bo-WSY"/>
+                            <constraint firstItem="LNG-Qt-xR3" firstAttribute="leading" secondItem="CfI-Mh-Jmq" secondAttribute="trailing" id="vIY-vI-kQ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VxP-TL-LRr"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OqP-Ft-LB1"/>
+                                <exclude reference="cXf-zz-jdk"/>
+                                <exclude reference="59h-jn-idC"/>
+                                <exclude reference="c54-m3-kTa"/>
+                                <exclude reference="vIY-vI-kQ0"/>
+                                <exclude reference="cgN-zA-vfj"/>
+                                <exclude reference="eGf-m5-mgq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="OqP-Ft-LB1"/>
+                                <include reference="cXf-zz-jdk"/>
+                                <include reference="c54-m3-kTa"/>
+                                <include reference="eGf-m5-mgq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="59h-jn-idC"/>
+                                <include reference="vIY-vI-kQ0"/>
+                                <include reference="cgN-zA-vfj"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="sideLeadingConstrait" destination="XPk-W7-geV" id="hmt-aC-X69"/>
+                        <outlet property="sideLeadingConstrait" destination="cgN-zA-vfj" id="WJq-B8-yNo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtQ-P5-4oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-514" y="-1034"/>
+            <point key="canvasLocation" x="-514.09295352323841" y="-1034.4000000000001"/>
         </scene>
     </scenes>
     <resources>

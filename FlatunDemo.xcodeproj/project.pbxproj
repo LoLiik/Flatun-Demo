@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1EAFC177A5DCE8AAC8BB7D80 /* Pods_FlatunDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3E8AD556262E41D24E9A45 /* Pods_FlatunDemo.framework */; };
 		FD2937D221AA669C00C86808 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FD2937D121AA669C00C86808 /* Podfile */; };
+		FD2937D421AAB4EE00C86808 /* UIViewController Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2937D321AAB4EE00C86808 /* UIViewController Extension.swift */; };
 		FD3BC5F921A3385C004C633C /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */; };
 		FD3BC5FB21A5EDF9004C633C /* NewsPostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */; };
 		FD3BC5FD21A7168E004C633C /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5FC21A7168E004C633C /* PostImageView.swift */; };
@@ -32,6 +33,7 @@
 		7A3E8AD556262E41D24E9A45 /* Pods_FlatunDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatunDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF45927B4C31501894F0AD3 /* Pods-FlatunDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatunDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlatunDemo/Pods-FlatunDemo.release.xcconfig"; sourceTree = "<group>"; };
 		FD2937D121AA669C00C86808 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		FD2937D321AAB4EE00C86808 /* UIViewController Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController Extension.swift"; sourceTree = "<group>"; };
 		FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewController.swift; sourceTree = "<group>"; };
 		FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostCVCell.swift; sourceTree = "<group>"; };
 		FD3BC5FC21A7168E004C633C /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				FD3BC60E21A71AC1004C633C /* UIColor Extension.swift */,
 				FD3BC5FC21A7168E004C633C /* PostImageView.swift */,
+				FD2937D321AAB4EE00C86808 /* UIViewController Extension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				FD3BC60D21A71A92004C633C /* Provider.swift in Sources */,
 				FD3BC5F921A3385C004C633C /* NewsCollectionViewController.swift in Sources */,
 				FD3BC60F21A71AC1004C633C /* UIColor Extension.swift in Sources */,
+				FD2937D421AAB4EE00C86808 /* UIViewController Extension.swift in Sources */,
 				FD3BC60121A718D0004C633C /* ImageInfo.swift in Sources */,
 				FD3BC5FB21A5EDF9004C633C /* NewsPostCVCell.swift in Sources */,
 				FDBE220821A14D430036A660 /* ProvidersTableTableViewController.swift in Sources */,

@@ -18,6 +18,8 @@ class NewsCollectionViewController: UIViewController{
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    @IBOutlet weak var sideMenuButton: UIBarButtonItem!
+
     @IBAction func showSide(_ sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
 
@@ -30,6 +32,9 @@ class NewsCollectionViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        NotificationCenter.default.addObserver(self, selector: #selector(hideSideMenuButton), name: UIDevice.orientationDidChangeNotification, object: nil)
+
         if sourceId == nil{
             self.title = "All"
         }
@@ -40,9 +45,7 @@ class NewsCollectionViewController: UIViewController{
         }
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
         refreshControl.beginRefreshing()
-        loadNews{
-            self.collectionView.reloadData()
-        }
+        self.refreshNews(nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -53,10 +56,29 @@ class NewsCollectionViewController: UIViewController{
         
     }
 
-    @objc private func refreshNews(_ sender: Any){
+    @objc private func refreshNews(_ sender: Any?){
         loadNews{
             self.collectionView.reloadData()
         }
+    }
+
+    @objc func hideSideMenuButton() -> Void{
+        switch UIDevice.current.orientation {
+        case .landscapeLeft, .landscapeRight:
+            print("Landscape")
+            NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+//            if self.navigationItem.leftBarButtonItem != nil{
+//                self.navigationItem.leftBarButtonItem = nil
+//            }
+        case .portrait, .portraitUpsideDown:
+            print("Portrait")
+            //            self.navigationItem.leftItemsSupplementBackButton = true
+//            self.navigationItem.leftBarButtonItem = sideMenuButton
+        default:
+            print("other")
+        }
+        self.view.setNeedsLayout()
+        self.view.setNeedsDisplay()
     }
 
     func loadNews(from url: String = "", _ completion: @escaping () -> Void){
