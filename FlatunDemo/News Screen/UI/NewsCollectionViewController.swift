@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 private let reuseIdentifier = "NewsPostCell"
 fileprivate let baseRequestURL = "http://api.flatun.com/api/feed_item/"
@@ -65,22 +66,26 @@ class NewsCollectionViewController: UIViewController{
         } else {
             urlString = baseRequestURL
         }
-        guard let url = URL(string: urlString) else { return }
 
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
+        Alamofire.request(urlString,
+                          method: .get)
+            .validate()
+            .responseJSON { response in
+                guard response.result.isSuccess else {
+                    print("Error while fetching posts: \(String(describing: response.result.error))")
+                    return
+                }
 
-            guard let data = data else { return }
-            //Implement JSON decoding and parsing
-            do {
-                //Decode retrived data with JSONDecoder and assing type of [Providers] object
+                guard let responseData = response.data else {
+                    print("Malformed data received from http://api.flatun.com/api/feed_item/ service")
+                    print("Error while fetching posts: \(String(describing: response))")
+                    return
+                }
+
+                do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
-                let parsedNews = try decoder.decode(News.self, from: data)
-
-                //Get back to the main queue
+                    let parsedNews = try decoder.decode(News.self, from: responseData)
                 DispatchQueue.main.async {
                     if self.news == nil{
                         self.news = parsedNews
@@ -91,11 +96,11 @@ class NewsCollectionViewController: UIViewController{
                     completion()
                     self.refreshControl.endRefreshing()
                 }
-
-            } catch let jsonError {
-                print(jsonError)
-            }
-            }.resume()
+                }
+                catch{
+                    return
+                }
+        }
     }
 }
 

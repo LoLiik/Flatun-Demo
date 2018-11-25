@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+
+fileprivate let PROVIDER_URL = "http://api.flatun.com/api/provider/"
 
 class SourcesTableViewController: UIViewController, UITableViewDelegate{
 
@@ -28,43 +31,49 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate{
     }
 
     func loadSources(_ completion: @escaping () -> Void){
-        let urlString = "http://api.flatun.com/api/provider/"
-        guard let url = URL(string: urlString) else { return }
-
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-                let alert = UIAlertController(title: "Отсутствуте интернет соединение", message: "Проверьте сигнал сотовой сети или достуность WiFi и обновите данные (потяните по экрану вниз)", preferredStyle: .alert)
-                alert.addAction(
-                    UIAlertAction(title: "Вернуться к новостям", style: .destructive)
-                )
-                DispatchQueue.main.async {
-                    self.present(alert, animated: true, completion: nil)
-                    self.loadSources {
-                        self.tableView.reloadData()
+        Alamofire.request(PROVIDER_URL,
+                          method: .get)
+            .validate()
+            .responseJSON { response in
+                guard response.result.isSuccess else {
+                    print("Error while fetching posts: \(String(describing: response.result.error))")
+                    let alert = UIAlertController(title: "Отсутствует интернет соединение", message: "Проверьте сигнал сотовой сети или достуность WiFi и обновите данные (потяните по экрану вниз)", preferredStyle: .alert)
+                    alert.addAction(
+                        UIAlertAction(title: "Вернуться к новостям", style: .destructive)
+                    )
+                    DispatchQueue.main.async {
+                        self.present(alert, animated: true, completion: nil)
+                        self.loadSources {
+                            self.tableView.reloadData()
+                        }
                     }
-                }
-            }
-
-            guard let data = data else { return }
-            do {
-                //Decode retrived data with JSONDecoder and assing type of [Providers] object
-                let parsedSources = try JSONDecoder().decode([Provider].self, from: data)
-                //Get back to the main queue
-                DispatchQueue.main.async {
-                    self.sources = parsedSources
-                    completion()
+                    return
                 }
 
-            } catch let jsonError {
-                print(jsonError)
-            }
-            }.resume()
+                guard let responseData = response.data else {
+                    print("Malformed data received from http://api.flatun.com/api/feed_item/ service")
+                    print("Error while fetching posts: \(String(describing: response))")
+                    return
+                }
+
+                do {
+                    //Decode retrived data with JSONDecoder and assing type of [Providers] object
+                    let parsedSources = try JSONDecoder().decode([Provider].self, from: responseData)
+                    //Get back to the main queue
+                    DispatchQueue.main.async {
+                        self.sources = parsedSources
+                        completion()
+                    }
+                } catch let jsonError {
+                    print(jsonError)
+                }
+        }
     }
 }
 
-    // MARK: - UITableViewDataSource
-    extension SourcesTableViewController: UITableViewDataSource{
+
+// MARK: - UITableViewDataSource
+extension SourcesTableViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
