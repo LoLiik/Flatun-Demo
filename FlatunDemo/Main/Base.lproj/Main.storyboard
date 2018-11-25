@@ -376,7 +376,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfI-Mh-Jmq" userLabel="Side Container View">
-                                <rect key="frame" x="20" y="0.0" width="295.5" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="295.5" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="262" id="al4-6C-YMu"/>
                                 </constraints>
@@ -422,7 +422,7 @@
                             <constraint firstAttribute="bottom" secondItem="LNG-Qt-xR3" secondAttribute="bottom" id="oDm-bo-WSY"/>
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="leading" secondItem="CfI-Mh-Jmq" secondAttribute="trailing" id="vIY-vI-kQ0"/>
                             <constraint firstItem="CfI-Mh-Jmq" firstAttribute="leading" secondItem="dhp-wQ-iaA" secondAttribute="leading" id="zJ6-2a-hwu">
-                                <variation key="widthClass=regular" constant="20"/>
+                                <variation key="widthClass=regular" constant="0.0"/>
                             </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VxP-TL-LRr"/>
