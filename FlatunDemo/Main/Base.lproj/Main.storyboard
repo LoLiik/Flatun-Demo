@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2zZ-Z8-hUg">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="JEo-Xc-J3P" customClass="NavViewController" customModule="FlatunDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Ss-sI-rhK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600.5" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -32,21 +32,21 @@
             <objects>
                 <viewController storyboardIdentifier="NewsCollectionViewController" id="PM1-kH-2m6" customClass="NewsCollectionViewController" customModule="FlatunDemo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xB8-hK-0wa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600.5" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TableBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y3n-AD-YFf" userLabel="Table Background Image">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="44" y="0.0" width="512.5" height="414"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="8lV-yh-bpv" userLabel="Logo Image View">
-                                <rect key="frame" x="137.5" y="35" width="100" height="100"/>
+                                <rect key="frame" x="250.5" y="15" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="1AH-R9-EGr"/>
                                     <constraint firstAttribute="height" constant="100" id="2xy-Y9-ZkJ"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mbj-9Q-w28">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="44" y="20" width="512.5" height="394"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4lq-AN-tUc">
                                     <size key="itemSize" width="355" height="374"/>
@@ -56,7 +56,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsPostCell" id="gp0-T1-L4k" customClass="NewsPostCVCell" customModule="FlatunDemo" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="374"/>
+                                        <rect key="frame" x="79" y="0.0" width="355" height="374"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="374"/>
@@ -233,20 +233,20 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="9FX-fm-yy1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y2F-K8-Pkd">
-                        <rect key="frame" x="0.0" y="0.0" width="262" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="295.5" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TableBackground" translatesAutoresizingMaskIntoConstraints="NO" id="RH5-bm-hvE" userLabel="Table Background Image">
-                                <rect key="frame" x="0.0" y="0.0" width="262" height="667"/>
+                                <rect key="frame" x="44" y="0.0" width="207.5" height="393"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKd-Oh-5wQ" userLabel="Table Header View">
-                                <rect key="frame" x="0.0" y="20" width="262" height="128"/>
+                                <rect key="frame" x="44" y="0.0" width="207.5" height="128"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sWC-Zy-8bd" userLabel="Logo Image View">
-                                        <rect key="frame" x="26" y="44" width="210" height="40"/>
+                                        <rect key="frame" x="-1" y="44" width="210" height="40"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Separator" translatesAutoresizingMaskIntoConstraints="NO" id="ZVN-UJ-GDB" userLabel="Separator Image View">
-                                        <rect key="frame" x="35" y="126" width="192" height="2"/>
+                                        <rect key="frame" x="8" y="126" width="192" height="2"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,7 +259,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edx-aS-QGf">
-                                <rect key="frame" x="0.0" y="148" width="262" height="519"/>
+                                <rect key="frame" x="44" y="128" width="207.5" height="265"/>
                                 <connections>
                                     <segue destination="n7Q-hr-biU" kind="embed" id="zsV-vU-3Qk"/>
                                 </connections>
@@ -307,7 +307,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jp7-oX-Tvm" id="LL4-ad-9sA" userLabel="News Source Content View">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
+                                            <rect key="frame" x="44" y="0.0" width="287" height="62.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPostImage" translatesAutoresizingMaskIntoConstraints="NO" id="YAy-wM-KLR" customClass="PostImageView" customModule="FlatunDemo" customModuleProvider="target">
@@ -372,11 +372,11 @@
             <objects>
                 <viewController id="2zZ-Z8-hUg" userLabel="Container View Controller" customClass="ContainerViewController" customModule="FlatunDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dhp-wQ-iaA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfI-Mh-Jmq" userLabel="Side Container View">
-                                <rect key="frame" x="-262" y="0.0" width="262" height="667"/>
+                                <rect key="frame" x="20" y="0.0" width="295.5" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="262" id="al4-6C-YMu"/>
                                 </constraints>
@@ -395,7 +395,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNG-Qt-xR3" userLabel="Main Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="295.5" y="0.0" width="600.5" height="414"/>
                                 <connections>
                                     <segue destination="JEo-Xc-J3P" kind="embed" id="w2t-Z3-Ixe"/>
                                 </connections>
@@ -406,42 +406,62 @@
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" id="59h-jn-idC"/>
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="top" secondItem="dhp-wQ-iaA" secondAttribute="top" id="7Sw-LQ-O9W"/>
                             <constraint firstItem="CfI-Mh-Jmq" firstAttribute="height" secondItem="dhp-wQ-iaA" secondAttribute="height" id="9Df-Cm-ztK"/>
+                            <constraint firstAttribute="trailing" secondItem="LNG-Qt-xR3" secondAttribute="trailing" id="GNw-1A-Ph6">
+                                <variation key="widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="VxP-TL-LRr" firstAttribute="trailing" secondItem="LNG-Qt-xR3" secondAttribute="trailing" id="OqP-Ft-LB1"/>
+                            <constraint firstItem="LNG-Qt-xR3" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" multiplier="0.67" id="Tw8-Es-IPr"/>
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="height" secondItem="dhp-wQ-iaA" secondAttribute="height" id="beC-kS-5jd"/>
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" multiplier="0.67" id="c54-m3-kTa"/>
                             <constraint firstItem="VxP-TL-LRr" firstAttribute="leading" secondItem="CfI-Mh-Jmq" secondAttribute="leading" id="cXf-zz-jdk"/>
                             <constraint firstItem="CfI-Mh-Jmq" firstAttribute="leading" secondItem="VxP-TL-LRr" secondAttribute="leading" constant="-262" id="cgN-zA-vfj"/>
                             <constraint firstItem="CfI-Mh-Jmq" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" multiplier="0.33" id="eGf-m5-mgq"/>
+                            <constraint firstItem="CfI-Mh-Jmq" firstAttribute="width" secondItem="dhp-wQ-iaA" secondAttribute="width" multiplier="0.33" id="jA1-ob-PdT"/>
                             <constraint firstAttribute="bottom" secondItem="CfI-Mh-Jmq" secondAttribute="bottom" id="mFh-Zh-xbD"/>
                             <constraint firstItem="CfI-Mh-Jmq" firstAttribute="top" secondItem="dhp-wQ-iaA" secondAttribute="top" id="o0b-Qp-GoC"/>
                             <constraint firstAttribute="bottom" secondItem="LNG-Qt-xR3" secondAttribute="bottom" id="oDm-bo-WSY"/>
                             <constraint firstItem="LNG-Qt-xR3" firstAttribute="leading" secondItem="CfI-Mh-Jmq" secondAttribute="trailing" id="vIY-vI-kQ0"/>
+                            <constraint firstItem="CfI-Mh-Jmq" firstAttribute="leading" secondItem="dhp-wQ-iaA" secondAttribute="leading" id="zJ6-2a-hwu">
+                                <variation key="widthClass=regular" constant="20"/>
+                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VxP-TL-LRr"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="cgN-zA-vfj"/>
+                                <exclude reference="eGf-m5-mgq"/>
+                                <exclude reference="jA1-ob-PdT"/>
+                                <exclude reference="zJ6-2a-hwu"/>
+                                <exclude reference="GNw-1A-Ph6"/>
                                 <exclude reference="OqP-Ft-LB1"/>
                                 <exclude reference="cXf-zz-jdk"/>
                                 <exclude reference="59h-jn-idC"/>
+                                <exclude reference="Tw8-Es-IPr"/>
                                 <exclude reference="c54-m3-kTa"/>
                                 <exclude reference="vIY-vI-kQ0"/>
-                                <exclude reference="cgN-zA-vfj"/>
-                                <exclude reference="eGf-m5-mgq"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="jA1-ob-PdT"/>
+                                <include reference="zJ6-2a-hwu"/>
+                                <include reference="GNw-1A-Ph6"/>
+                                <include reference="Tw8-Es-IPr"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="eGf-m5-mgq"/>
                                 <include reference="OqP-Ft-LB1"/>
                                 <include reference="cXf-zz-jdk"/>
                                 <include reference="c54-m3-kTa"/>
-                                <include reference="eGf-m5-mgq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="cgN-zA-vfj"/>
                                 <include reference="59h-jn-idC"/>
                                 <include reference="vIY-vI-kQ0"/>
-                                <include reference="cgN-zA-vfj"/>
                             </mask>
                         </variation>
                     </view>
