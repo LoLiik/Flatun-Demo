@@ -15,11 +15,9 @@ class NavViewController: UINavigationController {
 
     @objc func showCollection(_ notification: NSNotification){
         if let id = notification.userInfo?["SourceId"] as? Int{
-//            print("In Container VC catch \(id) \(notification.userInfo?["SourceTitle"] as? String)")
             currentSourceId = id
             currentSourceTitle = notification.userInfo?["SourceTitle"] as? String
         }
-
         performSegue(withIdentifier: "ShowNewCollection", sender: nil)
     }
 
@@ -29,7 +27,6 @@ class NavViewController: UINavigationController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowNewCollection"{
             if let destinationVC = segue.destination as? NewsCollectionViewController{
@@ -38,20 +35,4 @@ class NavViewController: UINavigationController {
             }
         }
     }
-
-
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "Show News"{
-//            if let destinationNavigationVC = segue.destination as? UINavigationController{
-//                let collectionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsCollectionViewController") as UIViewController
-//                if let newCollectionVC = collectionVC as? NewsCollectionViewController{
-//                    newCollectionVC.sourceId = sources?[tableView.indexPathForSelectedRow?.row ?? 0].id
-//                    newCollectionVC.title = sources?[tableView.indexPathForSelectedRow?.row ?? 0].name
-//                }
-//                destinationNavigationVC.pushViewController(collectionVC, animated: false)
-//            }
-//
-//        }
-
 }

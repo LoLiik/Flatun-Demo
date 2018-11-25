@@ -16,23 +16,6 @@ struct NewsPost: Codable{
     let providerAuthorAvatar: URL?
     let likesCount: Int
 
-    init(
-        images: [ImageInfo],
-        title: String,
-        published: Date,
-        providerAuthorName: String,
-        providerAuthorAvatar: URL?,
-        likesCount: Int
-        )
-    {
-        self.images = images
-        self.title = title
-        self.published = published
-        self.providerAuthorName = providerAuthorName
-        self.providerAuthorAvatar = providerAuthorAvatar
-        self.likesCount = likesCount
-    }
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: .title)

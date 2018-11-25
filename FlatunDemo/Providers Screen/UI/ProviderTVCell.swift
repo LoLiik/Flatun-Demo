@@ -1,5 +1,5 @@
 //
-//  NewsSourceTVCell.swift
+//  ProviderTVCell.swift
 //  FlatunDemo
 //
 //  Created by Евгений on 18.11.2018.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class NewsSourceTVCell: UITableViewCell {
+class ProviderTVCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var logo: UIImageView!
 
-    var newsSource: NewsSource? { didSet { updateUI() } }
+    var Provider: Provider? { didSet { updateUI() } }
 
     private func updateUI() {
-        name?.text = newsSource?.name
+        name?.text = Provider?.name
 
-        if let logoImageURL = newsSource?.imageURL {
+        if let logoImageURL = Provider?.imageURL {
             URLSession.shared.dataTask(with: logoImageURL) { (data, response, error) in
                 DispatchQueue.main.async {
                     if let imageData = try? Data(contentsOf: logoImageURL) {

@@ -13,7 +13,7 @@ fileprivate let baseRequestURL = "http://api.flatun.com/api/feed_item/"
 fileprivate let itemsPerRow: CGFloat = 1
 fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
 
-class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class NewsCollectionViewController: UIViewController{
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -75,7 +75,7 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
             guard let data = data else { return }
             //Implement JSON decoding and parsing
             do {
-                //Decode retrived data with JSONDecoder and assing type of [NewsSources] object
+                //Decode retrived data with JSONDecoder and assing type of [Providers] object
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                 let parsedNews = try decoder.decode(News.self, from: data)
@@ -97,9 +97,10 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
             }
             }.resume()
     }
+}
 
-    // MARK: UICollectionViewDataSource
-
+// MARK: UICollectionViewDataSource
+extension NewsCollectionViewController: UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -125,8 +126,10 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
         return cell
     }
+}
 
-    // MARK: UICollectionViewDelegate
+// MARK: UICollectionViewDelegate
+extension NewsCollectionViewController: UICollectionViewDelegate{
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,                          sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
@@ -152,7 +155,6 @@ class NewsCollectionViewController: UIViewController, UICollectionViewDelegate, 
     }
 
 }
-
 
 extension DateFormatter {
     static let iso8601Full: DateFormatter = {

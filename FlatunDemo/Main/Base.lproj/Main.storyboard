@@ -91,7 +91,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPostImage" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-zc-t2z" userLabel="Avatar Image">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPostImage" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-zc-t2z" userLabel="Avatar Image" customClass="PostImageView" customModule="FlatunDemo" customModuleProvider="target">
                                                                     <rect key="frame" x="15" y="10" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="30" id="5U7-xk-DFF"/>
@@ -119,14 +119,17 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-jv-ghc" userLabel="Post Panel">
                                                             <rect key="frame" x="0.0" y="250" width="355" height="74"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3N-ou-z6D" userLabel="Post Title Label">
-                                                                    <rect key="frame" x="15" y="15" width="317" height="23"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3N-ou-z6D" userLabel="Post Title Label">
+                                                                    <rect key="frame" x="15" y="15" width="317" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="SQE-er-KP1"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1U-W7-t5k">
-                                                                    <rect key="frame" x="15" y="53" width="207" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1U-W7-t5k">
+                                                                    <rect key="frame" x="15" y="50" width="207" height="14"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -138,10 +141,10 @@
                                                                 <constraint firstItem="t1U-W7-t5k" firstAttribute="width" secondItem="i3N-ou-z6D" secondAttribute="width" constant="-110" id="4De-2y-oxZ"/>
                                                                 <constraint firstItem="i3N-ou-z6D" firstAttribute="leading" secondItem="fRu-jv-ghc" secondAttribute="leading" constant="15" id="BzP-AC-5x0"/>
                                                                 <constraint firstAttribute="trailing" secondItem="i3N-ou-z6D" secondAttribute="trailing" constant="23" id="Dc6-nL-GwO"/>
-                                                                <constraint firstAttribute="trailing" secondItem="t1U-W7-t5k" secondAttribute="trailing" constant="133" id="MDL-mK-9Dv"/>
                                                                 <constraint firstAttribute="bottom" secondItem="t1U-W7-t5k" secondAttribute="bottom" constant="10" id="O8R-9W-VxI"/>
                                                                 <constraint firstItem="i3N-ou-z6D" firstAttribute="top" secondItem="fRu-jv-ghc" secondAttribute="top" constant="15" id="Y1r-EJ-b5f"/>
-                                                                <constraint firstItem="t1U-W7-t5k" firstAttribute="top" secondItem="i3N-ou-z6D" secondAttribute="bottom" constant="15" id="fqk-qr-PnL"/>
+                                                                <constraint firstItem="t1U-W7-t5k" firstAttribute="top" secondItem="i3N-ou-z6D" secondAttribute="bottom" constant="10" id="fqk-qr-PnL" userLabel="Date Label.top = Post Title Label.bottom + 10"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t1U-W7-t5k" secondAttribute="trailing" constant="20" symbolic="YES" id="vZ6-lQ-y40"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -299,14 +302,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsSourceCell" rowHeight="63" id="Jp7-oX-Tvm" customClass="NewsSourceTVCell" customModule="FlatunDemo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProviderCell" rowHeight="63" id="Jp7-oX-Tvm" customClass="ProviderTVCell" customModule="FlatunDemo">
                                         <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jp7-oX-Tvm" id="LL4-ad-9sA" userLabel="News Source Content View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPostImage" translatesAutoresizingMaskIntoConstraints="NO" id="YAy-wM-KLR">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPostImage" translatesAutoresizingMaskIntoConstraints="NO" id="YAy-wM-KLR" customClass="PostImageView" customModule="FlatunDemo" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="10.5" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="YAy-wM-KLR" secondAttribute="height" multiplier="1:1" id="vzF-pV-ZHk"/>

@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SourcesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SourcesTableViewController: UIViewController, UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
-    var sources: [NewsSource]?
+    var sources: [Provider]?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "TableBackground"))
@@ -47,11 +47,9 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
             }
 
             guard let data = data else { return }
-            //Implement JSON decoding and parsing
             do {
-                //Decode retrived data with JSONDecoder and assing type of [NewsSources] object
-                let parsedSources = try JSONDecoder().decode([NewsSource].self, from: data)
-
+                //Decode retrived data with JSONDecoder and assing type of [Providers] object
+                let parsedSources = try JSONDecoder().decode([Provider].self, from: data)
                 //Get back to the main queue
                 DispatchQueue.main.async {
                     self.sources = parsedSources
@@ -63,9 +61,10 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
             }
             }.resume()
     }
+}
 
-    // MARK: - Table view data source
-
+    // MARK: - UITableViewDataSource
+    extension SourcesTableViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -75,9 +74,9 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsSourceCell", for: indexPath)
-        if let newsSourceCell = cell as? NewsSourceTVCell{
-            newsSourceCell.newsSource = sources?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProviderCell", for: indexPath)
+        if let ProviderCell = cell as? ProviderTVCell{
+            ProviderCell.Provider = sources?[indexPath.row]
         }
         return cell
     }
@@ -85,12 +84,9 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let id = sources?[indexPath.row].id {
             NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
-            NotificationCenter.default.post(name: NSNotification.Name("ShowCollection"), object: nil, userInfo: ["SourceId":id, "SourceTitle": sources?[indexPath.row].name])
+            NotificationCenter.default.post(name: NSNotification.Name("ShowCollection"), object: nil, userInfo: ["SourceId":id, "SourceTitle": sources?[indexPath.row].name ?? "Unknown Source"])
         }
-
     }
-
-
 }
 
 
