@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EAFC177A5DCE8AAC8BB7D80 /* Pods_FlatunDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3E8AD556262E41D24E9A45 /* Pods_FlatunDemo.framework */; };
+		FD2937D221AA669C00C86808 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FD2937D121AA669C00C86808 /* Podfile */; };
 		FD3BC5F921A3385C004C633C /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */; };
 		FD3BC5FB21A5EDF9004C633C /* NewsPostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */; };
 		FD3BC5FD21A7168E004C633C /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3BC5FC21A7168E004C633C /* PostImageView.swift */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074331D6D4F238C19BDEF8A8 /* Pods-FlatunDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatunDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlatunDemo/Pods-FlatunDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7A3E8AD556262E41D24E9A45 /* Pods_FlatunDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatunDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFF45927B4C31501894F0AD3 /* Pods-FlatunDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatunDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlatunDemo/Pods-FlatunDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FD2937D121AA669C00C86808 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		FD3BC5F821A3385C004C633C /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewController.swift; sourceTree = "<group>"; };
 		FD3BC5FA21A5EDF9004C633C /* NewsPostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostCVCell.swift; sourceTree = "<group>"; };
 		FD3BC5FC21A7168E004C633C /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
@@ -51,12 +57,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EAFC177A5DCE8AAC8BB7D80 /* Pods_FlatunDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26C9956E85CB1B0C7A1B803E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A3E8AD556262E41D24E9A45 /* Pods_FlatunDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		888207EDB02EEC91BE3D78C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				074331D6D4F238C19BDEF8A8 /* Pods-FlatunDemo.debug.xcconfig */,
+				BFF45927B4C31501894F0AD3 /* Pods-FlatunDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FD2937D021AA5C2F00C86808 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +151,7 @@
 				FDBE220121A14CCB0036A660 /* Info.plist */,
 				FDBE21FC21A14CCB0036A660 /* Assets.xcassets */,
 				FDBE21FE21A14CCB0036A660 /* LaunchScreen.storyboard */,
+				FD2937D121AA669C00C86808 /* Podfile */,
 			);
 			path = "Additional Files";
 			sourceTree = "<group>";
@@ -147,6 +172,8 @@
 			children = (
 				FDBE21F421A14CC90036A660 /* FlatunDemo */,
 				FDBE21F321A14CC90036A660 /* Products */,
+				888207EDB02EEC91BE3D78C5 /* Pods */,
+				26C9956E85CB1B0C7A1B803E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDBE220421A14CCB0036A660 /* Build configuration list for PBXNativeTarget "FlatunDemo" */;
 			buildPhases = (
+				01A78EDECF5DB2ED047D8249 /* [CP] Check Pods Manifest.lock */,
 				FDBE21EE21A14CC90036A660 /* Sources */,
 				FDBE21EF21A14CC90036A660 /* Frameworks */,
 				FDBE21F021A14CC90036A660 /* Resources */,
+				3D1923B88DCD90C9D4F50E2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,11 +258,59 @@
 			files = (
 				FDBE220021A14CCB0036A660 /* LaunchScreen.storyboard in Resources */,
 				FDBE21FD21A14CCB0036A660 /* Assets.xcassets in Resources */,
+				FD2937D221AA669C00C86808 /* Podfile in Resources */,
 				FDBE21FB21A14CC90036A660 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01A78EDECF5DB2ED047D8249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlatunDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D1923B88DCD90C9D4F50E2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlatunDemo/Pods-FlatunDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlatunDemo/Pods-FlatunDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FDBE21EE21A14CC90036A660 /* Sources */ = {
@@ -396,6 +473,7 @@
 		};
 		FDBE220521A14CCB0036A660 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 074331D6D4F238C19BDEF8A8 /* Pods-FlatunDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -414,6 +492,7 @@
 		};
 		FDBE220621A14CCB0036A660 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFF45927B4C31501894F0AD3 /* Pods-FlatunDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

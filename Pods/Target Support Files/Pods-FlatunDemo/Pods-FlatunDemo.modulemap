@@ -1,0 +1,6 @@
+framework module Pods_FlatunDemo {
+  umbrella header "Pods-FlatunDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
